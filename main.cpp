@@ -5,7 +5,7 @@
 #include <mutex>
 #include <memory>
 
-#include "GameEngineAPI.h"
+#include "EngineAPI.h"
 
 class testing : public Engine::ObjectComponent
 {
