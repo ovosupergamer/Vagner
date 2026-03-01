@@ -7,20 +7,6 @@
 
 #include "EngineAPI.h"
 
-class testing : public Engine::ObjectComponent
-{
-public:
-	void Start() override
-	{
-		std::cout << "Start executed\n";
-	}
-
-	void FixedUpdate() override
-	{
-		std::cout << "Fixed updated execute\n";
-	}
-};
-
 int main()
 {
 
