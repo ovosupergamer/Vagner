@@ -16,7 +16,7 @@ private:
 protected:
 public:
     template<typename FunctionReturnType,typename Function, typename... FunctionArgs>
-    static const FunctionReturnType& CalcElapsedTimeToExecFunction(Function& FunctionToCalc, FunctionArgs&&... args)
+    static FunctionReturnType CalcElapsedTimeToExecFunction(Function& FunctionToCalc, FunctionArgs&&... args)
     {
         auto WhenStart = std::chrono::high_resolution_clock::now();
 
