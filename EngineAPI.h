@@ -19,7 +19,7 @@ public:
     protected:
     public:
         template<typename Type>
-        static const auto& CalculateMedia(const std::vector<Type>& VectorToCalcMedia)
+        static auto CalculateMedia(const std::vector<Type>& VectorToCalcMedia)
         {
             Type Result = 0;
             for (int loop1 = 0; loop1 < VectorToCalcMedia.size(); loop1++)
@@ -31,7 +31,7 @@ public:
         }
 
         template<typename Type>
-        static const auto& UniversalGravitacion(const Type& Gravity, const Type& MassInKG, const Type& OtherMassInKG, const Type& DistanceInMeters)
+        static auto UniversalGravitacion(const Type& Gravity, const Type& MassInKG, const Type& OtherMassInKG, const Type& DistanceInMeters)
         {
             Type DistanceDoublePower = DistanceInMeters * DistanceInMeters;
 
@@ -40,7 +40,7 @@ public:
         }
 
         template<typename Type>
-        static const auto& MachCalc(const Type& ObjectVelMetersForSecond)
+        static auto MachCalc(const Type& ObjectVelMetersForSecond)
         {
             Type Result = ObjectVelMetersForSecond / 343;
 
@@ -48,7 +48,7 @@ public:
         }
 
         template<typename Type>
-        static const auto& CalcVelUsingTwoPoints(const Type& DistanceOfTwoSensorsInMeters, const Type& TimeInSeconds)
+        static auto CalcVelUsingTwoPoints(const Type& DistanceOfTwoSensorsInMeters, const Type& TimeInSeconds)
         {
             Type Result = 0;
             Result = DistanceOfTwoSensorsInMeters / TimeInSeconds;
