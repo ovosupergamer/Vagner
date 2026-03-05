@@ -19,6 +19,7 @@ public:
     enum Type
     {
     Type_Undefined,
+    Type_Void,
     Type_Int,
     Type_Float,
     Type_Double,
@@ -28,7 +29,7 @@ public:
     };
 
     template<typename VarType>
-    class ReflectedVar
+    class ReflectVar
     {
     private:
         std::string VarName = "";
@@ -36,7 +37,7 @@ public:
         VarType VarData;
     protected:
     public:
-        ReflectedVar(const std::string& GetVarName, const Type& GetTypeOfVar,VarType GetVarData)
+        ReflectVar(const std::string& GetVarName, const Type& GetTypeOfVar,VarType GetVarData)
         {
             VarData = GetVarData;
             TypeOfVar = GetTypeOfVar;
@@ -103,10 +104,16 @@ public:
         // ExecuteMethod
         // Do not use const & in this function, because when method ends, him delete de return variable, then you need to pass an copy
         template<typename... Args>
-        auto ExecuteFunction(Args&&... args)
+        auto ExecuteFunctionWithReturn(Args&&... args)
         {
             auto FunctionReturn = MethodToReflect(std::forward<Args>(args)...);
             return FunctionReturn;
+        }
+
+        template<typename... Args>
+        void ExecuteFunctionWithNoReturn(Args&&... args)
+        {
+            MethodToReflect(std::forward<Args>(args)...);
         }
     };
 };
