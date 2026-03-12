@@ -40,7 +40,7 @@ public:
         }
 
         template<typename Type>
-        static auto MachCalc(const Type& ObjectVelMetersForSecond)
+        static auto MarchCalc(const Type& ObjectVelMetersForSecond)
         {
             Type Result = ObjectVelMetersForSecond / 343;
 
